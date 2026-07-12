@@ -1,0 +1,18 @@
+{
+  "name": "@manna/ai-policy",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "echo \"@manna/ai-policy: build stub\"",
+    "lint": "echo \"@manna/ai-policy: lint stub\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "echo \"@manna/ai-policy: test stub\""
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "description": "Shared AI validators for Plus server and BYOK client"
+}

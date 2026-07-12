@@ -1,0 +1,17 @@
+{
+  "name": "@manna/recommendation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "echo \"@manna/recommendation: build stub\"",
+    "lint": "echo \"@manna/recommendation: lint stub\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "echo \"@manna/recommendation: test stub\""
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

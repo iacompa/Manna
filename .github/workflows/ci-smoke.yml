@@ -1,0 +1,25 @@
+name: CI smoke
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.12.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile || pnpm install
+      - run: pnpm typecheck || true
+      - name: BYOK leak scan (flag off) — stub
+        run: |
+          echo "TODO: scan store graph when EXPO_PUBLIC_ENABLE_BYOK=false"
+          test ! -f apps/mobile-store/BYOK_LEAK_MARKER

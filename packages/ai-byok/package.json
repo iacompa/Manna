@@ -1,0 +1,18 @@
+{
+  "name": "@manna/ai-byok",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "echo \"@manna/ai-byok: build stub\"",
+    "lint": "echo \"@manna/ai-byok: lint stub\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "echo \"@manna/ai-byok: test stub\""
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "description": "OpenRouter BYOK client, SecureStore key storage, model picker \u2014 store-gated by EXPO_PUBLIC_ENABLE_BYOK"
+}

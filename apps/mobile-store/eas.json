@@ -1,0 +1,35 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": { "simulator": true }
+    },
+    "preview-store": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_ENABLE_BYOK": "false"
+      }
+    },
+    "production-ios": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_ENABLE_BYOK": "false"
+      }
+    },
+    "production-android": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_ENABLE_BYOK": "false"
+      }
+    }
+  },
+  "submit": {
+    "production-ios": {},
+    "production-android": {}
+  }
+}
