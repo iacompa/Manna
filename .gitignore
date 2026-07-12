@@ -89,3 +89,4 @@ tooling/corpus/archives/
 tmp/
 temp/
 .claude/
+tooling/corpus/out/
