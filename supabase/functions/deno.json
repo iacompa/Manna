@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@manna/contracts": "../../../packages/contracts/src/index.ts",
+    "@manna/ai-policy": "../../../packages/ai-policy/src/index.ts",
+    "zod": "npm:zod@3.25.76"
+  }
+}

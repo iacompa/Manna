@@ -1,89 +1,47 @@
 /**
- * Phase 0 contract sketches for Plus AI + shared domain types.
- * Not a frozen API — refine behind versioned schemas before mobile consumers ship.
+ * Versioned Plus AI + shared domain contracts (Zod + inferred types).
  */
 
-export type CorpusVersion = string;
+export {
+  aiCitationSchema,
+  aiOperationSchema,
+  aiRequestPayloadSchema,
+  aiRequestSchema,
+  aiResultFailureSchema,
+  aiResultSchema,
+  aiResultSuccessSchema,
+  aiSectionSchema,
+  canonicalRefSchema,
+  consentReceiptSchema,
+  corpusVersionSchema,
+  entitlementSnapshotSchema,
+  safetyDispositionSchema,
+} from "./schemas";
 
-export type CanonicalRef = {
-  translationId: string;
-  bookId: string;
-  chapter: number;
-  verseStart: number;
-  verseEnd: number;
-};
+import type { z } from "zod";
+import type {
+  aiCitationSchema,
+  aiOperationSchema,
+  aiRequestPayloadSchema,
+  aiRequestSchema,
+  aiResultSchema,
+  aiSectionSchema,
+  canonicalRefSchema,
+  consentReceiptSchema,
+  corpusVersionSchema,
+  entitlementSnapshotSchema,
+  safetyDispositionSchema,
+} from "./schemas";
 
+export type CorpusVersion = z.infer<typeof corpusVersionSchema>;
+export type CanonicalRef = z.infer<typeof canonicalRefSchema>;
 export type PassageId = string;
-
-export type AiOperation =
-  | "daily_reflection"
-  | "explain_passage"
-  | "search_scripture"
-  | "draft_prayer";
-
-/** Client → POST /v1/ai/run. Must not include model, keys, user_id, entitlement, or Scripture text. */
-export type AiRequest = {
-  operation: AiOperation;
-  consentReceiptId: string;
-  corpusVersion: CorpusVersion;
-  idempotencyKey: string;
-  /** Explicitly user-approved bounded payload */
-  payload: AiRequestPayload;
-};
-
-export type AiRequestPayload =
-  | { kind: "daily_reflection"; themes: string[] }
-  | { kind: "explain_passage"; refs: CanonicalRef[]; question?: string }
-  | { kind: "search_scripture"; query: string; language: "en" | "es" }
-  | { kind: "draft_prayer"; intent: string; language: "en" | "es" };
-
-export type SafetyDisposition =
-  | "allow"
-  | "refuse_with_message"
-  | "crisis_intervention"
-  | "budget_exhausted"
-  | "corpus_mismatch"
-  | "provider_failure";
-
-export type AiCitation = {
-  ref: CanonicalRef;
-  /** Always corpus-hydrated; never raw model quote text */
-  text: string;
-};
-
-export type AiResult =
-  | {
-      ok: true;
-      operation: AiOperation;
-      corpusVersion: CorpusVersion;
-      safety: "allow";
-      sections: AiSection[];
-      citations: AiCitation[];
-      releaseId: string;
-    }
-  | {
-      ok: false;
-      operation: AiOperation;
-      safety: Exclude<SafetyDisposition, "allow">;
-      fallback: "free_search" | "free_context" | "update_required" | "retry_later";
-      messageKey: string;
-    };
-
-export type AiSection = {
-  titleKey?: string;
-  body: string;
-  /** Label requirement: AI-assisted commentary, never Scripture */
-  kind: "ai_commentary" | "safety_message" | "editorial_note";
-};
-
-export type EntitlementSnapshot = {
-  entitlement: "free" | "manna_plus";
-  source: "server_mirror" | "reconciled";
-  refreshedAt: string;
-};
-
-export type ConsentReceipt = {
-  id: string;
-  version: string;
-  acceptedAt: string;
-};
+export type AiOperation = z.infer<typeof aiOperationSchema>;
+export type AiRequest = z.infer<typeof aiRequestSchema>;
+export type AiRequestPayload = z.infer<typeof aiRequestPayloadSchema>;
+export type SafetyDisposition = z.infer<typeof safetyDispositionSchema>;
+export type AiCitation = z.infer<typeof aiCitationSchema>;
+export type AiResult = z.infer<typeof aiResultSchema>;
+export type AiSection = z.infer<typeof aiSectionSchema>;
+export type EntitlementSnapshot = z.infer<typeof entitlementSnapshotSchema>;
+export type ConsentReceipt = z.infer<typeof consentReceiptSchema>;
