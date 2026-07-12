@@ -28,6 +28,12 @@
       "eas": {
         "projectId": "TBD_EAS_PROJECT_ID"
       }
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
