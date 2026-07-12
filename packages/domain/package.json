@@ -11,9 +11,6 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "echo \"@manna/domain: test stub\""
   },
-  "dependencies": {
-    "@manna/contracts": "workspace:*"
-  },
   "devDependencies": {
     "typescript": "^5.8.3"
   }

@@ -1,0 +1,71 @@
+{
+  "tabs": {
+    "today": "Today",
+    "read": "Read",
+    "pray": "Pray",
+    "library": "Library"
+  },
+  "onboarding": {
+    "languageTitle": "Choose your language",
+    "languageSubtitle": "English and Spanish are equally supported.",
+    "english": "English",
+    "spanish": "Español",
+    "goalsTitle": "Optional goals",
+    "goalsSubtitle": "Choose up to three. These stay on your device.",
+    "readingTitle": "Reading setup",
+    "readingSubtitle": "Preview text size for Scripture.",
+    "firstPassageTitle": "A passage for you",
+    "readInContext": "Read in context",
+    "save": "Save",
+    "pray": "Pray",
+    "skip": "Skip",
+    "continue": "Continue",
+    "finish": "Finish"
+  },
+  "goals": {
+    "comfort": "Comfort",
+    "wisdom": "Wisdom",
+    "prayer": "Prayer",
+    "learnScripture": "Learn Scripture",
+    "buildHabit": "Build a Habit",
+    "hope": "Hope",
+    "guidance": "Guidance",
+    "gratitude": "Gratitude"
+  },
+  "today": {
+    "greetingMorning": "Good morning",
+    "greetingAfternoon": "Good afternoon",
+    "greetingEvening": "Good evening",
+    "dailyPassage": "Daily passage",
+    "stubNote": "Contextual passage stub — corpus loads locally."
+  },
+  "read": {
+    "title": "Read",
+    "openReader": "Open reader",
+    "corpusStatus": "Local corpus"
+  },
+  "reader": {
+    "title": "Reader",
+    "reference": "Reference",
+    "stubNote": "Scripture surface stub — opaque background per PLAN."
+  },
+  "pray": {
+    "title": "Pray",
+    "guidedActs": "Guided prayer (ACTS)",
+    "actsStub": "Adoration, Confession, Thanksgiving, Supplication — step stub."
+  },
+  "library": {
+    "title": "Library",
+    "stub": "Highlights, bookmarks, and collections will live here."
+  },
+  "settings": {
+    "title": "Settings",
+    "plus": "Manna Plus",
+    "plusStub": "Subscription placeholder — RevenueCat wiring in a later packet.",
+    "restore": "Restore purchases",
+    "restoreStub": "Restore placeholder for store-provided billing copy.",
+    "privacy": "Privacy",
+    "support": "Support",
+    "aiProvider": "AI provider (BYOK)"
+  }
+}
