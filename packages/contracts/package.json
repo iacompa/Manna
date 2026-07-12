@@ -1,0 +1,17 @@
+{
+  "name": "@manna/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "echo \"@manna/contracts: build stub\"",
+    "lint": "echo \"@manna/contracts: lint stub\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "echo \"@manna/contracts: test stub\""
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

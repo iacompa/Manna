@@ -1,0 +1,21 @@
+{
+  "name": "manna",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Manna monorepo \u2014 calm bilingual Bible and prayer companion",
+  "packageManager": "pnpm@11.12.0",
+  "engines": {
+    "node": ">=24.0.0 <25.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "dev": "turbo run dev --filter=mobile-store"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
+  }
+}
