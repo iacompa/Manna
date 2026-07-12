@@ -37,6 +37,7 @@ GoogleService-Info.plist
 *.db-journal
 *.db-wal
 *.db-shm
+!packages/scripture/assets/scripture.db
 *.sqlite
 *.sqlite3
 

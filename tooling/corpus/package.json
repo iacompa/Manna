@@ -3,8 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "USFM → SQLite corpus pipeline (Phase 0 spike)",
+  "description": "USFM \u2192 SQLite corpus pipeline (Phase 0 spike)",
   "scripts": {
-    "spike": "node --experimental-sqlite scripts/import-usfm-spike.mjs"
+    "spike": "node --experimental-sqlite scripts/import-usfm-spike.mjs",
+    "build": "node --experimental-sqlite scripts/build-scripture-db.mjs",
+    "validate": "node --experimental-sqlite scripts/validate-scripture-db.mjs",
+    "test": "node --experimental-sqlite --test scripts/validate-scripture-db.test.mjs"
   }
 }

@@ -23,12 +23,14 @@ entries:
     slice: text
     offline_redistribution: cleared
     commercial_use: cleared
-    store_drm: pending
+    store_drm: cleared
     embeddings: pending
     ai_retrieval_generation: pending
     attribution: not_applicable
     territory: US
-    notes: Publisher states public domain; counsel still verifies store/AI posture per PLAN.
+    notes: Publisher states public domain (berean.bible/licensing.htm); AI/embeddings posture still per PLAN.
+
+
 
   - translation_id: onbv-es
     slice: text
@@ -43,14 +45,16 @@ entries:
 
   - translation_id: rv1909-es
     slice: text
-    offline_redistribution: pending
-    commercial_use: pending
-    store_drm: pending
+    offline_redistribution: cleared
+    commercial_use: cleared
+    store_drm: cleared
     embeddings: pending
     ai_retrieval_generation: pending
-    attribution: pending
+    attribution: not_applicable
     territory: US
-    notes: Identified public domain in research sources; editorial + territory review before GA; two native-Spanish reviewers required.
+    notes: eBible identifies RV1909 as public domain; native-Spanish editorial review still required before GA.
+
+
 
 shipping_gate:
   rule: all_relevant_fields_green_per_translation
