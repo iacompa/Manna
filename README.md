@@ -11,7 +11,7 @@ Calm, bilingual, offline-first Bible and prayer companion for iOS and Android.
 pnpm monorepo (Node 24, Expo SDK 57). See [PLAN.md](./PLAN.md) for product authority and [AGENTS.md](./AGENTS.md) for agent operating rules.
 
 ```text
-apps/mobile-store/     Expo Router store app
+apps/mobile-store/     Expo store app (`App.tsx` entry; `app/` contract routes — see ROUTING.md)
 packages/*             Shared domain, AI policy, BYOK module, UI
 supabase/              Migrations, Edge Functions, RLS tests
 tooling/corpus/        USFM → SQLite pipeline

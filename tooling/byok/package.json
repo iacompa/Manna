@@ -1,0 +1,11 @@
+{
+  "name": "@manna/byok-tooling",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "BYOK kill-switch source scans for the store app",
+  "scripts": {
+    "test": "node --test scan-store-byok-leak.test.mjs",
+    "scan": "node scan-store-byok-leak.mjs"
+  }
+}
