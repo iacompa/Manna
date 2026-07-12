@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-07-12",
+  "allowlist_note": "Pinned Alpha USFM archives per PLAN.md §4. Verify SHA-256 before import.",
+  "sources": [
+    {
+      "translation_id": "bsb-en",
+      "display_name": "Berean Standard Bible",
+      "language_code": "en",
+      "url": "https://bereanbible.com/bsb_usfm.zip",
+      "license_url": "https://berean.bible/licensing.htm",
+      "archive_filename": "bsb_usfm.zip",
+      "sha256": "8c4a8068afb1e9c1528c34a89ba73dca9e3d529f4317428553c3695bd373d98a",
+      "extracted_glob": "bsb_usfm/*.usfm"
+    },
+    {
+      "translation_id": "rv1909-es",
+      "display_name": "Reina-Valera 1909",
+      "language_code": "es",
+      "url": "https://ebible.org/Scriptures/spaRV1909_usfm.zip",
+      "license_url": "https://ebible.org/spaRV1909/copyright.htm",
+      "archive_filename": "spaRV1909_usfm.zip",
+      "sha256": "33b820e603635757c53b6c49d828853301a35cea216680e2d353527f94ff94fa",
+      "extracted_glob": "*spaRV1909.usfm"
+    }
+  ]
+}
