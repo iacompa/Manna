@@ -1,0 +1,10 @@
+{
+  "name": "@manna/corpus-tooling",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "USFM → SQLite corpus pipeline (Phase 0 spike)",
+  "scripts": {
+    "spike": "node --experimental-sqlite scripts/import-usfm-spike.mjs"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "corpus_version": "spike-0.1.0",
+  "generated_at": "2026-07-12T13:08:11.802Z",
+  "phase": "0E-spike",
+  "fixtures_sha256": {
+    "fixtures/bsb-jhn-3-spike.usfm": "e32e2d1a9928cd25279c720b7c3a1138e5311cef6bf22560d9bd4b091bf9fd33",
+    "fixtures/rv1909-jhn-3-spike.usfm": "234673646a57d080f67cedd5f1d1cbd6fe314a2ff182b3c9860ed6cbdce7d233"
+  },
+  "integrity_hash": "99be37c3022e68955364b86834483e507b13820442519264e3d5fbe57b852410",
+  "db_path": "tooling/corpus/out/scripture-spike.db",
+  "verse_count": 4,
+  "rights_ledger": "content/manifests/rights-ledger.yaml",
+  "note": "Stub manifest — not a signed shipping artifact."
+}

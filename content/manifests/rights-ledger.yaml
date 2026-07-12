@@ -1,0 +1,61 @@
+# Manna rights ledger (Phase 0 stub)
+# Authority: PLAN.md §4 — no shipping build until every relevant field is green.
+# Status values: blocked | pending | cleared | not_applicable | unknown
+
+schema_version: 1
+updated_at: "2026-07-12"
+counsel_review_required: true
+
+translations:
+  - id: bsb-en
+    display_name: Berean Standard Bible (English)
+    track: alpha_and_en_ga
+  - id: onbv-es
+    display_name: Open Nueva Biblia Viva (Spanish) — clearance track
+    track: es_ga_target
+  - id: rv1909-es
+    display_name: Reina-Valera 1909 (Spanish) — Clásica fallback
+    track: es_fallback
+
+# Each row is one licensable slice; expand in Phase 1+ as manifests harden.
+entries:
+  - translation_id: bsb-en
+    slice: text
+    offline_redistribution: cleared
+    commercial_use: cleared
+    store_drm: pending
+    embeddings: pending
+    ai_retrieval_generation: pending
+    attribution: not_applicable
+    territory: US
+    notes: Publisher states public domain; counsel still verifies store/AI posture per PLAN.
+
+  - translation_id: onbv-es
+    slice: text
+    offline_redistribution: blocked
+    commercial_use: blocked
+    store_drm: blocked
+    embeddings: blocked
+    ai_retrieval_generation: blocked
+    attribution: pending
+    territory: US
+    notes: CC BY-SA terms published; written clearance required for US commercial offline app + DRM + AI.
+
+  - translation_id: rv1909-es
+    slice: text
+    offline_redistribution: pending
+    commercial_use: pending
+    store_drm: pending
+    embeddings: pending
+    ai_retrieval_generation: pending
+    attribution: pending
+    territory: US
+    notes: Identified public domain in research sources; editorial + territory review before GA; two native-Spanish reviewers required.
+
+shipping_gate:
+  rule: all_relevant_fields_green_per_translation
+  alpha_allowed:
+    - bsb-en
+    - rv1909-es
+  blocked_until_clearance:
+    - onbv-es
