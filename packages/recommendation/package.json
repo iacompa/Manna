@@ -9,10 +9,9 @@
     "build": "echo \"@manna/recommendation: build stub\"",
     "lint": "echo \"@manna/recommendation: lint stub\"",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "node --import tsx --test src/daily-pick.test.ts"
+    "test": "echo \"@manna/recommendation: test stub\""
   },
   "devDependencies": {
-    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
 }

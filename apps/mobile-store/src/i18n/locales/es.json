@@ -1,0 +1,71 @@
+{
+  "tabs": {
+    "today": "Hoy",
+    "read": "Leer",
+    "pray": "Orar",
+    "library": "Biblioteca"
+  },
+  "onboarding": {
+    "languageTitle": "Elige tu idioma",
+    "languageSubtitle": "Inglés y español tienen el mismo peso.",
+    "english": "English",
+    "spanish": "Español",
+    "goalsTitle": "Metas opcionales",
+    "goalsSubtitle": "Elige hasta tres. Permanecen en tu dispositivo.",
+    "readingTitle": "Lectura",
+    "readingSubtitle": "Vista previa del tamaño del texto.",
+    "firstPassageTitle": "Un pasaje para ti",
+    "readInContext": "Leer en contexto",
+    "save": "Guardar",
+    "pray": "Orar",
+    "skip": "Omitir",
+    "continue": "Continuar",
+    "finish": "Listo"
+  },
+  "goals": {
+    "comfort": "Consuelo",
+    "wisdom": "Sabiduría",
+    "prayer": "Oración",
+    "learnScripture": "Aprender la Escritura",
+    "buildHabit": "Crear un hábito",
+    "hope": "Esperanza",
+    "guidance": "Guía",
+    "gratitude": "Gratitud"
+  },
+  "today": {
+    "greetingMorning": "Buenos días",
+    "greetingAfternoon": "Buenas tardes",
+    "greetingEvening": "Buenas noches",
+    "dailyPassage": "Pasaje del día",
+    "stubNote": "Pasaje contextual provisional — corpus local."
+  },
+  "read": {
+    "title": "Leer",
+    "openReader": "Abrir lector",
+    "corpusStatus": "Corpus local"
+  },
+  "reader": {
+    "title": "Lector",
+    "reference": "Referencia",
+    "stubNote": "Superficie de Escritura provisional."
+  },
+  "pray": {
+    "title": "Orar",
+    "guidedActs": "Oración guiada (ACTS)",
+    "actsStub": "Adoración, Confesión, Acción de gracias, Súplica — paso provisional."
+  },
+  "library": {
+    "title": "Biblioteca",
+    "stub": "Resaltados, marcadores y colecciones irán aquí."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "plus": "Manna Plus",
+    "plusStub": "Suscripción provisional — RevenueCat en un paquete posterior.",
+    "restore": "Restaurar compras",
+    "restoreStub": "Restaurar provisional para el texto de la tienda.",
+    "privacy": "Privacidad",
+    "support": "Ayuda",
+    "aiProvider": "Proveedor de IA (BYOK)"
+  }
+}
