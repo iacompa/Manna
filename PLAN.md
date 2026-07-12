@@ -1569,7 +1569,7 @@ Google:
 - Accurate billing disclosures
 - Closed-testing evidence
 - TalkBack and Android form-factor QA
-- No BYOK or external-payment path in the Play artifact
+- First Play / App Store submissions ship with `EXPO_PUBLIC_ENABLE_BYOK=false` (no BYOK module in the store graph). In-store BYOK is allowed later behind the compile-time kill switch (ADR-0001); if policy rejects it, flip the flag off, drop `@manna/ai-byok` from the Metro graph, rebuild, and resubmit — no external-payment path for Manna Plus (store billing only)
 
 ---
 

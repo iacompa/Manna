@@ -1,0 +1,8 @@
+/**
+ * Example guarded entry when EXPO_PUBLIC_ENABLE_BYOK=true at build time.
+ * Copy to ai-provider.tsx (or re-export from here) only for internal BYOK builds.
+ * Production store profiles keep EXPO_PUBLIC_ENABLE_BYOK=false — see eas.json.
+ */
+import { AiProviderSettingsScreen } from "@manna/ai-byok";
+
+export default AiProviderSettingsScreen;

@@ -1,0 +1,6 @@
+# BYOK artifact / source denylist (flag-off store builds). One case-sensitive pattern per line.
+# Lines starting with # are comments. Blank lines ignored.
+@manna/ai-byok
+openrouter.ai
+OPENROUTER
+openrouter

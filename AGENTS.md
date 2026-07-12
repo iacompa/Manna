@@ -68,7 +68,7 @@ When `EXPO_PUBLIC_ENABLE_BYOK=false`, CI **must fail** if any of the following a
 - Strings: `openrouter`, `OPENROUTER`, `api_key` in BYOK context, BYOK settings route paths
 - Dependencies linking `@manna/ai-byok` in production store lockfile slice
 
-Implement scan in `.github/workflows/` (Phase 0 stub documents intent; full gate lands with mobile CI).
+CI runs `node tooling/byok/scan-store-byok-leak.mjs` with `EXPO_PUBLIC_ENABLE_BYOK=false` (see `.github/workflows/ci-smoke.yml`) and `node --test tooling/byok/scan-store-byok-leak.test.mjs`. Denylist: `tooling/byok-artifact-denylist.txt`. Extend with bundle/IPA scan before GA (ADR-0001).
 
 ## Plus AI routing
 

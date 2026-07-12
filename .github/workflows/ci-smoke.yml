@@ -8,6 +8,8 @@ on:
 jobs:
   smoke:
     runs-on: ubuntu-latest
+    env:
+      EXPO_PUBLIC_ENABLE_BYOK: "false"
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -18,8 +20,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile || pnpm install
-      - run: pnpm typecheck || true
-      - name: BYOK leak scan (flag off) — stub
-        run: |
-          echo "TODO: scan store graph when EXPO_PUBLIC_ENABLE_BYOK=false"
-          test ! -f apps/mobile-store/BYOK_LEAK_MARKER
+      - run: pnpm typecheck
+      - name: BYOK store leak scan (flag off)
+        run: node tooling/byok/scan-store-byok-leak.mjs
+      - name: BYOK scan unit tests
+        run: node --test tooling/byok/scan-store-byok-leak.test.mjs
