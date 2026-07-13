@@ -21,6 +21,7 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="onboarding" options={{ headerShown: false }} />
         <Stack.Screen name="reader/index" options={{ title: 'Reader' }} />
+        <Stack.Screen name="search/index" options={{ title: 'Search' }} />
         <Stack.Screen name="pray/guided" options={{ title: 'Pray' }} />
         <Stack.Screen name="(settings)" options={{ headerShown: false }} />
       </Stack>

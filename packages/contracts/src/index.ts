@@ -87,3 +87,4 @@ export type ConsentReceipt = {
   version: string;
   acceptedAt: string;
 };
+export * from "./schemas";
