@@ -7,13 +7,13 @@
   },
   "onboarding": {
     "languageTitle": "Elige tu idioma",
-    "languageSubtitle": "Inglés y español tienen el mismo peso.",
+    "languageSubtitle": "Ingl\u00e9s y espa\u00f1ol tienen el mismo peso.",
     "english": "English",
-    "spanish": "Español",
+    "spanish": "Espa\u00f1ol",
     "goalsTitle": "Metas opcionales",
     "goalsSubtitle": "Elige hasta tres. Permanecen en tu dispositivo.",
     "readingTitle": "Lectura",
-    "readingSubtitle": "Vista previa del tamaño del texto.",
+    "readingSubtitle": "Vista previa del tama\u00f1o del texto.",
     "firstPassageTitle": "Un pasaje para ti",
     "readInContext": "Leer en contexto",
     "save": "Guardar",
@@ -24,48 +24,61 @@
   },
   "goals": {
     "comfort": "Consuelo",
-    "wisdom": "Sabiduría",
-    "prayer": "Oración",
+    "wisdom": "Sabidur\u00eda",
+    "prayer": "Oraci\u00f3n",
     "learnScripture": "Aprender la Escritura",
-    "buildHabit": "Crear un hábito",
+    "buildHabit": "Crear un h\u00e1bito",
     "hope": "Esperanza",
-    "guidance": "Guía",
+    "guidance": "Gu\u00eda",
     "gratitude": "Gratitud"
   },
   "today": {
-    "greetingMorning": "Buenos días",
+    "greetingMorning": "Buenos d\u00edas",
     "greetingAfternoon": "Buenas tardes",
     "greetingEvening": "Buenas noches",
-    "dailyPassage": "Pasaje del día",
-    "stubNote": "Pasaje contextual provisional — corpus local."
+    "dailyPassage": "Pasaje del d\u00eda"
   },
   "read": {
     "title": "Leer",
     "openReader": "Abrir lector",
-    "corpusStatus": "Corpus local"
+    "corpusStatus": "Corpus local",
+    "oldTestament": "Antiguo Testamento",
+    "newTestament": "Nuevo Testamento",
+    "chooseChapter": "Elige un cap\u00edtulo"
   },
   "reader": {
     "title": "Lector",
     "reference": "Referencia",
-    "stubNote": "Superficie de Escritura provisional."
+    "stubNote": "Superficie de Escritura provisional.",
+    "bilingual": "Biling\u00fce",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "missingChapter": "Este cap\u00edtulo a\u00fan no est\u00e1 en tu corpus local."
   },
   "pray": {
     "title": "Orar",
-    "guidedActs": "Oración guiada (ACTS)",
-    "actsStub": "Adoración, Confesión, Acción de gracias, Súplica — paso provisional."
+    "guidedActs": "Oraci\u00f3n guiada (ACTS)",
+    "actsStub": "Adoraci\u00f3n, Confesi\u00f3n, Acci\u00f3n de gracias, S\u00faplica \u2014 paso provisional."
   },
   "library": {
     "title": "Biblioteca",
-    "stub": "Resaltados, marcadores y colecciones irán aquí."
+    "stub": "Resaltados, marcadores y colecciones ir\u00e1n aqu\u00ed."
   },
   "settings": {
     "title": "Ajustes",
     "plus": "Manna Plus",
-    "plusStub": "Suscripción provisional — RevenueCat en un paquete posterior.",
+    "plusStub": "Suscripci\u00f3n provisional \u2014 RevenueCat en un paquete posterior.",
     "restore": "Restaurar compras",
     "restoreStub": "Restaurar provisional para el texto de la tienda.",
     "privacy": "Privacidad",
     "support": "Ayuda",
     "aiProvider": "Proveedor de IA (BYOK)"
+  },
+  "search": {
+    "title": "Buscar",
+    "subtitle": "B\u00fasqueda por palabra en tu Biblia offline",
+    "placeholder": "Buscar en la Biblia\u2026",
+    "action": "Buscar",
+    "searching": "Buscando\u2026"
   }
 }
