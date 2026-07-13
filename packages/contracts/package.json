@@ -9,9 +9,13 @@
     "build": "echo \"@manna/contracts: build stub\"",
     "lint": "echo \"@manna/contracts: lint stub\"",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "echo \"@manna/contracts: test stub\""
+    "test": "node --import tsx --test src/schemas.test.ts"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "tsx": "^4.20.3"
   }
 }

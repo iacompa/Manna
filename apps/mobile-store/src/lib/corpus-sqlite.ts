@@ -1,81 +1,57 @@
-import * as SQLite from 'expo-sqlite';
+import {
+  createScriptureRepository,
+  getDailyPassage,
+  type ScriptureRepository,
+  type SqlDriver,
+  type TranslationCode,
+} from "@manna/scripture";
+import * as SQLite from "expo-sqlite";
+import { importDatabaseFromAssetAsync } from "expo-sqlite";
 
-export type VerseRow = {
-  id: number;
-  book: string;
-  chapter: number;
-  verse: number;
-  translation: string;
-  text: string;
-};
+const DB_NAME = "scripture.db";
 
-const FIXTURE_VERSES: Omit<VerseRow, 'id'>[] = [
-  {
-    book: 'John',
-    chapter: 3,
-    verse: 16,
-    translation: 'BSB',
-    text: 'For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.',
-  },
-  {
-    book: 'Juan',
-    chapter: 3,
-    verse: 16,
-    translation: 'RV1909',
-    text: 'Porque de tal manera amó Dios al mundo, que ha dado á su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.',
-  },
-];
-
+let repoPromise: Promise<ScriptureRepository> | null = null;
 let dbPromise: Promise<SQLite.SQLiteDatabase> | null = null;
 
-async function seedIfEmpty(db: SQLite.SQLiteDatabase): Promise<void> {
-  const row = await db.getFirstAsync<{ c: number }>('SELECT COUNT(*) as c FROM verses');
-  if ((row?.c ?? 0) > 0) {
-    return;
-  }
-  for (const verse of FIXTURE_VERSES) {
-    await db.runAsync(
-      'INSERT INTO verses (book, chapter, verse, translation, text) VALUES (?, ?, ?, ?, ?)',
-      verse.book,
-      verse.chapter,
-      verse.verse,
-      verse.translation,
-      verse.text,
-    );
-  }
+function toDriver(db: SQLite.SQLiteDatabase): SqlDriver {
+  return {
+    getAllAsync: <T,>(sql: string, ...params: SQLite.SQLiteBindValue[]) =>
+      db.getAllAsync<T>(sql, ...params),
+    getFirstAsync: <T,>(sql: string, ...params: SQLite.SQLiteBindValue[]) =>
+      db.getFirstAsync<T>(sql, ...params),
+  };
 }
 
-export async function openCorpusDatabase(): Promise<SQLite.SQLiteDatabase> {
+async function openBundledDatabase(): Promise<SQLite.SQLiteDatabase> {
   if (!dbPromise) {
     dbPromise = (async () => {
-      const db = await SQLite.openDatabaseAsync('manna-corpus-spike');
-      await db.execAsync(`
-        CREATE TABLE IF NOT EXISTS verses (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          book TEXT NOT NULL,
-          chapter INTEGER NOT NULL,
-          verse INTEGER NOT NULL,
-          translation TEXT NOT NULL,
-          text TEXT NOT NULL
-        );
-      `);
-      await seedIfEmpty(db);
-      return db;
+      await importDatabaseFromAssetAsync(DB_NAME, {
+        assetId: require("../../../../packages/scripture/assets/scripture.db"),
+        forceOverwrite: false,
+      });
+      return SQLite.openDatabaseAsync(DB_NAME);
     })();
   }
   return dbPromise;
 }
 
-export async function getFixtureVerseCount(): Promise<number> {
-  const db = await openCorpusDatabase();
-  const row = await db.getFirstAsync<{ c: number }>('SELECT COUNT(*) as c FROM verses');
-  return row?.c ?? 0;
+export async function getScriptureRepository(): Promise<ScriptureRepository> {
+  if (!repoPromise) {
+    repoPromise = (async () => {
+      const db = await openBundledDatabase();
+      return createScriptureRepository(toDriver(db));
+    })();
+  }
+  return repoPromise;
 }
 
-export async function getSampleVerse(translation: string): Promise<VerseRow | null> {
-  const db = await openCorpusDatabase();
-  return db.getFirstAsync<VerseRow>(
-    'SELECT * FROM verses WHERE translation = ? ORDER BY id LIMIT 1',
-    translation,
-  );
+export async function fetchDailyPassage(locale: "en" | "es") {
+  const db = await openBundledDatabase();
+  return getDailyPassage(toDriver(db), { locale });
+}
+
+export async function getSampleVerse(translation: TranslationCode) {
+  const repo = await getScriptureRepository();
+  const chapter = await repo.getChapter(translation, "JHN", 3);
+  return chapter.verses.find((verse) => verse.verse === 16) ?? chapter.verses[0] ?? null;
 }

@@ -9,7 +9,7 @@
     "languageTitle": "Choose your language",
     "languageSubtitle": "English and Spanish are equally supported.",
     "english": "English",
-    "spanish": "Español",
+    "spanish": "Espa\u00f1ol",
     "goalsTitle": "Optional goals",
     "goalsSubtitle": "Choose up to three. These stay on your device.",
     "readingTitle": "Reading setup",
@@ -36,23 +36,29 @@
     "greetingMorning": "Good morning",
     "greetingAfternoon": "Good afternoon",
     "greetingEvening": "Good evening",
-    "dailyPassage": "Daily passage",
-    "stubNote": "Contextual passage stub — corpus loads locally."
+    "dailyPassage": "Daily passage"
   },
   "read": {
     "title": "Read",
     "openReader": "Open reader",
-    "corpusStatus": "Local corpus"
+    "corpusStatus": "Local corpus",
+    "oldTestament": "Old Testament",
+    "newTestament": "New Testament",
+    "chooseChapter": "Choose a chapter"
   },
   "reader": {
     "title": "Reader",
     "reference": "Reference",
-    "stubNote": "Scripture surface stub — opaque background per PLAN."
+    "stubNote": "Scripture surface stub \u2014 opaque background per PLAN.",
+    "bilingual": "Bilingual",
+    "previous": "Previous",
+    "next": "Next",
+    "missingChapter": "This chapter is not in your local corpus yet."
   },
   "pray": {
     "title": "Pray",
     "guidedActs": "Guided prayer (ACTS)",
-    "actsStub": "Adoration, Confession, Thanksgiving, Supplication — step stub."
+    "actsStub": "Adoration, Confession, Thanksgiving, Supplication \u2014 step stub."
   },
   "library": {
     "title": "Library",
@@ -61,11 +67,18 @@
   "settings": {
     "title": "Settings",
     "plus": "Manna Plus",
-    "plusStub": "Subscription placeholder — RevenueCat wiring in a later packet.",
+    "plusStub": "Subscription placeholder \u2014 RevenueCat wiring in a later packet.",
     "restore": "Restore purchases",
     "restoreStub": "Restore placeholder for store-provided billing copy.",
     "privacy": "Privacy",
     "support": "Support",
     "aiProvider": "AI provider (BYOK)"
+  },
+  "search": {
+    "title": "Search",
+    "subtitle": "Keyword search in your offline Bible",
+    "placeholder": "Search Scripture\u2026",
+    "action": "Search",
+    "searching": "Searching\u2026"
   }
 }
