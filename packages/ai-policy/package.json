@@ -11,6 +11,10 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "echo \"@manna/ai-policy: test stub\""
   },
+  "dependencies": {
+    "@manna/contracts": "workspace:*",
+    "zod": "^3.25.76"
+  },
   "devDependencies": {
     "typescript": "^5.8.3"
   },
