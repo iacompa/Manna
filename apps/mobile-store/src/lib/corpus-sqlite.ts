@@ -3,6 +3,7 @@ import {
   getDailyPassage,
   type ScriptureRepository,
   type SqlDriver,
+  type TranslationCode,
 } from "@manna/scripture";
 import * as SQLite from "expo-sqlite";
 import { importDatabaseFromAssetAsync } from "expo-sqlite";
@@ -47,4 +48,10 @@ export async function getScriptureRepository(): Promise<ScriptureRepository> {
 export async function fetchDailyPassage(locale: "en" | "es") {
   const db = await openBundledDatabase();
   return getDailyPassage(toDriver(db), { locale });
+}
+
+export async function getSampleVerse(translation: TranslationCode) {
+  const repo = await getScriptureRepository();
+  const chapter = await repo.getChapter(translation, "JHN", 3);
+  return chapter.verses.find((verse) => verse.verse === 16) ?? chapter.verses[0] ?? null;
 }
