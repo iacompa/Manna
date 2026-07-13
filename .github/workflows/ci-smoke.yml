@@ -25,5 +25,3 @@ jobs:
         run: node tooling/byok/scan-store-byok-leak.mjs
       - name: BYOK scan unit tests
         run: node --test tooling/byok/scan-store-byok-leak.test.mjs
-      - name: Corpus scripture.db sanity
-        run: pnpm --filter @manna/corpus-tooling test

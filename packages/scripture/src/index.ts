@@ -1,1 +1,1 @@
-export * from "./scripture-db";
+export {};
