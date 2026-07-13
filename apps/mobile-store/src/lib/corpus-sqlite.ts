@@ -26,7 +26,7 @@ async function openBundledDatabase(): Promise<SQLite.SQLiteDatabase> {
   if (!dbPromise) {
     dbPromise = (async () => {
       await importDatabaseFromAssetAsync(DB_NAME, {
-        assetId: require("../../../../packages/scripture/assets/scripture.db"),
+        assetId: require("../../assets/scripture.db"),
         forceOverwrite: false,
       });
       return SQLite.openDatabaseAsync(DB_NAME);

@@ -20,6 +20,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile || pnpm install
+      - name: Stage mobile corpus asset
+        run: mkdir -p apps/mobile-store/assets && cp packages/scripture/assets/scripture.db apps/mobile-store/assets/scripture.db
       - run: pnpm typecheck
       - name: BYOK store leak scan (flag off)
         run: node tooling/byok/scan-store-byok-leak.mjs
